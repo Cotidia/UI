@@ -1,0 +1,17 @@
+{
+    "title": "Primary button",
+    "preview": "@preview",
+    "context": {
+        "text": "Primary",
+        "modifier": "primary"
+    },
+    "variants": [
+        {
+            "name": "disabled",
+            "context": {
+                "text": "Disabled",
+                "modifier": "disabled"
+            }
+        }
+    ]
+}
