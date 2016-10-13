@@ -5,6 +5,14 @@ const sass     = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const del      = require('del');
 
+// JS compilation - may need reviewing (copied from https://gist.github.com/danharper/3ca2273125f500429945)
+const sourcemaps = require('gulp-sourcemaps');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const browserify = require('browserify');
+const watchify = require('watchify');
+const babel = require('babelify');
+
 const fractal  = require('./fractal.js'); // import the Fractal instance configured in the fractal.js file
 const logger = fractal.cli.console;      // make use of Fractal's console object for logging
 
@@ -62,6 +70,46 @@ gulp.task('css:watch', function () {
 gulp.task('css', ['css:clean', 'css:process']);
 
 
+/* Javascript */
+
+function compileJS(watch) {
+  var bundler = watchify(browserify('assets/js/main.js', { debug: true }).transform(babel));
+
+  function rebundle() {
+    bundler.bundle()
+      .on('error', function(err) { console.error(err); this.emit('end'); })
+      .pipe(source('build.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('public/assets/js/main.js'));
+  }
+
+  if (watch) {
+    bundler.on('update', function() {
+      console.log('-> bundling...');
+      rebundle();
+    });
+  }
+
+  rebundle();
+}
+
+function watchJS() {
+  return compileJS(true);
+};
+
+gulp.task('js:build', function(){
+    return compileJS();
+})
+
+gulp.task('js:watch', function(){
+    return watchJS();
+})
+
+gulp.task('js', ['js:build']);
+
+
 /* Fonts */
 
 gulp.task('fonts:copy', function() {
@@ -97,7 +145,7 @@ gulp.task('images:watch', function() {
 });
 
 
-gulp.task('default', ['css', 'fonts', 'images']);
-gulp.task('watch', ['css:watch', 'fonts:watch', 'images:watch']);
+gulp.task('default', ['css', 'js', 'fonts', 'images']);
+gulp.task('watch', ['css:watch', 'js:watch', 'fonts:watch', 'images:watch']);
 
 gulp.task('dev', ['default', 'fractal:start', 'watch']);

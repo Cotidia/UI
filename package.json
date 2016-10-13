@@ -19,12 +19,19 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@frctl/fractal": "^1.0.8",
-    "node-neat": "^1.7.2"
+    "node-neat": "^1.7.2",
+    "react": "^15.3.2"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
-    "gulp-sass-glob": "^1.0.6"
+    "gulp-sass-glob": "^1.0.6",
+    "gulp-sourcemaps": "^1.7.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   }
 }
