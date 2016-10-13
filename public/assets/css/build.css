@@ -104,6 +104,7 @@ table {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
 @keyframes rotate {
   /* line 206, /Users/Connor/Repos/personal/personal-website/bower/loaders.css/loaders.css */
   0% {
@@ -117,6 +118,7 @@ table {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
 /**
  * Create a loading animation.
  * 
@@ -355,14 +357,17 @@ table {
     display: inline-block;
     position: absolute;
     right: 0.7em;
-    top: 50%;
+    top: 1em;
     margin-top: -0.7em;
     line-height: 1.4em;
     z-index: 1; }
   .form__group--error .form__control--select:after {
-    right: 1.93077em; }
+    right: 2.23077em; }
   .form__group .form__error {
     margin-bottom: 0.92308em; }
+    .form__group .form__error--tooltip {
+      margin-bottom: 0; }
+
 .form__control {
   position: relative; }
   .form__control--select:after {
@@ -376,13 +381,19 @@ table {
     border-right: 5px solid transparent;
     border-top: 5px solid #666666;
     pointer-events: none; }
-  .form__control--checkbox .form__label {
-    display: inline-block;
-    margin-left: 0.61538em; }
+
 .form__label {
   display: block;
   padding: 0;
   text-align: left; }
+  .form__label--inline {
+    padding-top: 0.92308em; }
+
+.form__checkbox {
+  margin-right: 1.23077em;
+  position: relative;
+  top: -1px; }
+
 .form__text {
   /* Remove First */
   -webkit-appearance: none;
@@ -408,6 +419,7 @@ table {
     outline: none;
     box-shadow: none;
     border: 1px solid #666666; }
+
 .form__select {
   /* Remove First */
   -webkit-appearance: none;
@@ -434,6 +446,7 @@ table {
   .form__select:focus, .form__select *:focus {
     outline: none;
     box-shadow: none; }
+
 .form__error {
   color: #d50000;
   background-color: #ffd5d5;
@@ -469,6 +482,7 @@ table {
   .form__error--tooltip-on {
     display: inline-block;
     opacity: 1; }
+
 .form__help {
   color: #aaaaaa;
   font-size: 0.92308em;
@@ -516,6 +530,7 @@ table {
   overflow-y: auto;
   display: none;
   z-index: 1; }
+
 .control-select__option {
   color: #666666;
   padding: 0.46154em 1.23077em;
@@ -524,11 +539,17 @@ table {
     background-color: #eeeeee;
     color: #333333;
     cursor: pointer; }
+  .control-select__option--selected, .control-select__option--selected:hover, .control-select__option--selected:focus {
+    background-color: #00abd3;
+    color: #fff;
+    cursor: pointer; }
   .control-select__option--highlighted {
     text-decoration: underline;
     color: #333333; }
+
 .control-select--focus .control-select__options {
   display: block; }
+
 .control-select--focus .form__select {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -537,6 +558,7 @@ table {
 .control-radio__options {
   list-style: none;
   padding-left: 0; }
+
 .control-radio__label {
   margin-left: 0.61538em; }
 
@@ -566,9 +588,9 @@ table {
   line-height: 1em;
   border-radius: 4px;
   user-select: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  -moz-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out; }
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
   .btn:hover {
     background-color: #6e6e6e;
     text-decoration: none;
@@ -756,6 +778,7 @@ table {
   margin-right: 1.23077em; }
   .btn-group .btn:last-child {
     margin-right: 0; }
+
 .btn-group .btn--small {
   margin-right: 0.61538em; }
 
@@ -815,7 +838,7 @@ table {
       z-index: 100; }
       @media screen and (min-width: 768px) {
         .modal--open:after {
-          background-color: rgba(0, 0, 0, 0.6); } }
+          background-color: rgba(0, 0, 0, 0.1); } }
       @media screen and (max-width: 767px) {
         .modal--open:after {
           background-color: #fff; } }
@@ -860,12 +883,12 @@ table {
         width: 360px; } }
   .modal__header {
     position: relative;
-    padding: 0.46154em 1.23077em;
+    padding: 0 1.23077em;
     background-color: #f4f4f4;
     border-bottom: none; }
     @media screen and (min-width: 768px) {
       .modal__header {
-        padding: 0.46154em 2.46154em;
+        padding: 0 2.46154em;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px; } }
   .modal__body {
@@ -1429,4 +1452,30 @@ hr {
   .label--danger {
     background-color: #d50000; }
 
-/*# sourceMappingURL=sixteen.css.map */
+/*
+ * Tag label with close button
+ */
+.tag {
+  color: #fff;
+  background-color: #aaaaaa;
+  display: inline-block;
+  border-radius: 4px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-transform: uppercase;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: ellipsis;
+  margin-right: 0.5em;
+  padding-right: 0; }
+  .tag__clear {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: inline-block;
+    width: 1.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+    margin-left: 0.5em; }
+    .tag__clear:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
