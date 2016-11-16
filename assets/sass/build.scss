@@ -17,3 +17,7 @@
 @import "sixteen/components/datepicker";
 @import "sixteen/components/label";
 @import "sixteen/components/tag";
+
+.content-inner{
+    padding: calc-em($vertical_padding) calc-em($horizontal_padding);
+}

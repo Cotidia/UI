@@ -555,6 +555,20 @@ table {
   border-bottom-left-radius: 0;
   border-bottom-color: #eaeaea; }
 
+.control-select__group:first-child .control-select__group-heading {
+  border-top: none; }
+
+.control-select__group-heading {
+  background-color: #fafafa;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  color: #666666;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0.46154em 1.23077em;
+  text-align: left; }
+
 .control-radio__options {
   list-style: none;
   padding-left: 0; }
@@ -1158,8 +1172,9 @@ hr {
   background-color: #fff; }
   .table-row:hover, .table-row:active, .table-row:focus {
     background-color: #fafafa; }
-  .table-row:last-child td {
-    border-bottom: none; }
+  @media screen and (min-width: 768px) {
+    .table-row:last-child td {
+      border-bottom: none; } }
 
 .table-head-cell {
   background-color: #eeeeee;
@@ -1170,6 +1185,28 @@ hr {
 .table-cell {
   padding: 0.65934em 1.23077em;
   border-bottom: 1px solid #eeeeee; }
+
+@media screen and (max-width: 767px) {
+  thead {
+    display: none; }
+  .table-row {
+    display: block;
+    margin-bottom: 0.92308em;
+    margin-left: 1.23077em;
+    margin-right: 1.23077em;
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    border-radius: 4px; }
+  .table-head-cell {
+    display: none; }
+  .table-cell {
+    display: block;
+    text-align: right; }
+    .table-cell:before {
+      display: block;
+      float: left;
+      font-weight: bold;
+      content: attr(data-header); } }
 
 /** ---- FORM ----
  * CSS styles for alerts.
@@ -1479,3 +1516,6 @@ hr {
     margin-left: 0.5em; }
     .tag__clear:hover {
       background-color: rgba(0, 0, 0, 0.5); }
+
+.content-inner {
+  padding: 0.92308em 1.23077em; }
