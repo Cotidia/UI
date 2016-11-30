@@ -13,26 +13,7 @@ const browserify = require('browserify');
 const watchify = require('watchify');
 const babel = require('babelify');
 
-
 require("node-neat")
-
-/*
- * Configure a Fractal instance.
- *
- * This configuration could also be done in a separate file, provided that this file
- * then imported the configured fractal instance from it to work with in your Gulp tasks.
- * i.e. const fractal = require('./my-fractal-config-file');
- */
-
-const fractal  = require('@frctl/fractal').create(); // import the Fractal instance configured in the fractal.js file
-const logger = fractal.cli.console;      // make use of Fractal's console object for logging
-
-fractal.set('project.title', 'Sixteen UI Documentation'); // title for the project
-fractal.web.set('builder.dest', 'build'); // destination for the static export
-fractal.web.set('static.path', __dirname + '/public');
-fractal.docs.set('path', `${__dirname}/docs`); // location of the documentation directory.
-fractal.components.set('path', `${__dirname}/components`); // location of the component directory.
-
 
 /*
  * An example of a Gulp task that starts a Fractal development server.
@@ -53,6 +34,8 @@ gulp.task('fractal:start', function(){
  */
 
 gulp.task('fractal:build', function(){
+    const fractal  = require('./fractal.js');
+    const logger = fractal.cli.console;
     const builder = fractal.web.builder();
     builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
     builder.on('error', err => logger.error(err.message));
