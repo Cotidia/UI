@@ -1,6 +1,9 @@
 @import "bourbon";
 @import "neat";
 
+// Font awesome
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
 // Sixteen framework
 @import "sixteen/settings";
 @import "sixteen/components/reset";
