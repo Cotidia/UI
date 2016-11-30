@@ -19,6 +19,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@frctl/fractal": "^1.0.8",
+    "font-awesome": "^4.7.0",
     "node-neat": "^1.7.2",
     "react": "^15.3.2"
   },
