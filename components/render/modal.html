@@ -1,0 +1,62 @@
+
+
+<div class="modal modal--open">
+    <div class="modal__content">
+        <div class="modal__header modal-header">
+            <div class="modal-header__action modal-header__action--left">
+                <a href="#" class="modal-header__action-btn">
+                    <span class="fa fa-chevron-left"></span>
+                    Previous
+                </a>
+            </div>
+            <div class="modal-header__title">
+                <h3>Modal title</h3>
+            </div>
+            <div class="modal-header__action modal-header__action--right">
+                <a href="#" class="modal-header__action-btn">
+                    Next
+                    <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+        <div class="modal__body modal__body--padded">
+            <p>Pariatur aute exercitation excepteur labore dolor in minim enim. Elit do nisi fugiat qui qui consectetur irure consequat adipisicing duis esse anim pariatur. Laboris exercitation consectetur consectetur velit aute irure quis. Occaecat eu incididunt laborum ipsum laborum id et. Pariatur exercitation veniam enim cupidatat tempor quis fugiat occaecat id aute et duis incididunt ex ea Lorem.</p>
+            <p>Anim aliquip cupidatat do qui amet ea id dolore eu. Aliquip proident ut ut mollit enim labore exercitation reprehenderit magna duis velit cupidatat do. Laboris amet et cupidatat ipsum et magna nostrud adipisicing ipsum est fugiat.</p>
+            <p>Ad elit culpa ipsum laboris pariatur elit excepteur aliquip incididunt. Eiusmod occaecat consectetur aliquip eiusmod velit non voluptate exercitation proident ex veniam id cupidatat commodo. Quis ea reprehenderit id sit duis id non esse. Ut exercitation id dolore cillum elit Lorem aliqua laboris do fugiat nulla nulla ipsum dolor cillum irure. Cupidatat labore adipisicing ipsum minim exercitation veniam aute. Aliqua excepteur elit consectetur deserunt sunt Lorem eiusmod. Ex nulla proident non magna cillum quis sit reprehenderit aliquip consectetur fugiat occaecat duis amet fugiat. Ea labore eiusmod ea quis nulla est in sint tempor veniam.</p>
+            <p>Nulla culpa laboris commodo ad mollit ea non cupidatat cupidatat Lorem nisi et enim officia ullamco excepteur laborum. Labore duis ea et sint reprehenderit anim id mollit pariatur mollit sint et quis sunt enim exercitation. Qui occaecat nostrud aliquip minim deserunt amet veniam et deserunt magna commodo commodo ex non. Esse proident reprehenderit ad nostrud dolor in do exercitation anim qui magna dolor exercitation quis proident nisi. Labore quis aliquip officia aliquip sit dolor ex mollit minim aute amet veniam exercitation nulla culpa. Excepteur do qui duis ullamco magna sit officia fugiat ex sit aute magna eu exercitation magna. Velit duis qui ea est elit minim mollit sit velit duis est. Duis labore magna aute reprehenderit sit elit laboris sunt Lorem aliquip aliqua excepteur aute.</p>
+            <p>Pariatur aute exercitation excepteur labore dolor in minim enim. Elit do nisi fugiat qui qui consectetur irure consequat adipisicing duis esse anim pariatur. Laboris exercitation consectetur consectetur velit aute irure quis. Occaecat eu incididunt laborum ipsum laborum id et. Pariatur exercitation veniam enim cupidatat tempor quis fugiat occaecat id aute et duis incididunt ex ea Lorem.</p>
+            <p>Pariatur aute exercitation excepteur labore dolor in minim enim. Elit do nisi fugiat qui qui consectetur irure consequat adipisicing duis esse anim pariatur. Laboris exercitation consectetur consectetur velit aute irure quis. Occaecat eu incididunt laborum ipsum laborum id et. Pariatur exercitation veniam enim cupidatat tempor quis fugiat occaecat id aute et duis incididunt ex ea Lorem.</p>
+            <p>Pariatur aute exercitation excepteur labore dolor in minim enim. Elit do nisi fugiat qui qui consectetur irure consequat adipisicing duis esse anim pariatur. Laboris exercitation consectetur consectetur velit aute irure quis. Occaecat eu incididunt laborum ipsum laborum id et. Pariatur exercitation veniam enim cupidatat tempor quis fugiat occaecat id aute et duis incididunt ex ea Lorem.</p>
+            <p>Pariatur aute exercitation excepteur labore dolor in minim enim. Elit do nisi fugiat qui qui consectetur irure consequat adipisicing duis esse anim pariatur. Laboris exercitation consectetur consectetur velit aute irure quis. Occaecat eu incididunt laborum ipsum laborum id et. Pariatur exercitation veniam enim cupidatat tempor quis fugiat occaecat id aute et duis incididunt ex ea Lorem.</p>
+            <p>Anim aliquip cupidatat do qui amet ea id dolore eu. Aliquip proident ut ut mollit enim labore exercitation reprehenderit magna duis velit cupidatat do. Laboris amet et cupidatat ipsum et magna nostrud adipisicing ipsum est fugiat.</p>
+        </div>
+        <div class="modal__footer">
+            <button class="btn btn--primary">Save</button>
+            <button class="btn close-modal">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var modal = document.querySelector('.modal');
+    var btn = document.querySelectorAll('.open-modal');
+    var close = document.querySelector('.close-modal');
+    modal.addEventListener('click', function(e){
+        if(e.target.classList.contains('modal')){
+            modal.className = "modal";
+            document.body.className = "";
+        }
+
+    })
+    for (var i = 0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function(){
+            modal.className = "modal modal--open";
+            document.body.className = "no-scroll";
+        })
+    }
+    close.addEventListener('click', function(){
+        modal.className = "modal";
+        document.body.className = "";
+    })
+</script>
+
