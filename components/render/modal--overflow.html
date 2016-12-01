@@ -1,0 +1,134 @@
+
+
+<div class="dialog dialog--modal dialog--modal-open">
+    <div class="dialog__content">
+        <div class="dialog__header dialog-header">
+            <div class="dialog-header__title">
+                <h3>Modal title</h3>
+            </div>
+            <div class="dialog-header__action dialog-header__action--right">
+                <a href="#" class="dialog-header__action-btn close-dialog">
+                    close
+                    <span class="fa fa-close"></span>
+                </a>
+            </div>
+        </div>
+        <div class="dialog__body dialog__body--padded">
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+            <p>
+                Pariatur aute exercitation excepteur labore dolor in minim enim.
+                Elit do nisi fugiat qui qui consectetur irure consequat
+                adipisicing duis esse anim pariatur. Laboris exercitation
+                consectetur consectetur velit aute irure quis. Occaecat eu
+                incididunt laborum ipsum laborum id et. Pariatur exercitation
+                veniam enim cupidatat tempor quis fugiat occaecat id aute et
+                duis incididunt ex ea Lorem.
+            </p>
+        </div>
+        <div class="dialog__footer dialog-footer">
+            <div class="dialog-footer__actions">
+                <button class="btn btn--primary">Save</button>
+                <button class="btn close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var modal = document.querySelector('.dialog');
+    var btn = document.querySelectorAll('.open-dialog');
+    var close = document.querySelectorAll('.close-dialog');
+    modal.addEventListener('click', function(e){
+        if(e.target.classList.contains('dialog')){
+            modal.className = "dialog dialog--modal";
+            document.body.className = "";
+        }
+
+    })
+    for (var i = 0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function(e){
+            e.preventDefault();
+            modal.className = "dialog dialog--modal dialog--modal-open";
+            document.body.className = "no-scroll";
+        })
+    }
+    for (var i = 0; i < close.length; i++) {
+        close[i].addEventListener('click', function(e){
+            e.preventDefault();
+            modal.className = "dialog dialog--modal";
+            document.body.className = "";
+        })
+    }
+</script>
+
