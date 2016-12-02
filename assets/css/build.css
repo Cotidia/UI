@@ -3220,13 +3220,13 @@ table {
     .dialog--modal .dialog__body {
       overflow-y: auto; } }
   .dialog--modal .dialog__header {
-    background-color: #00abd3;
+    background-color: #fafafa;
     border-bottom: none;
-    color: #fff;
+    color: #333333;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px; }
     .dialog--modal .dialog__header .dialog-header__action-btn {
-      color: #fff; }
+      color: #00abd3; }
   .dialog--modal .dialog__footer {
     background-color: #fff;
     border-top: none;
@@ -3236,6 +3236,9 @@ table {
 .dialog__content {
   border-bottom: 1px solid #eeeeee;
   background-color: #fff; }
+  @media screen and (max-width: 767px) {
+    .dialog__content {
+      width: 100%; } }
   @media screen and (min-width: 768px) {
     .dialog__content {
       border: 1px solid #eeeeee;
@@ -3243,13 +3246,15 @@ table {
       margin: 1.71429em auto;
       width: 540px; } }
   .dialog__content--pre {
-    border: none; }
+    border: none;
+    background-color: transparent; }
     @media screen and (max-width: 767px) {
       .dialog__content--pre {
         border-bottom: 1px solid #eeeeee;
         padding: 0 1.14286em; } }
   .dialog__content--post {
-    border: none; }
+    border: none;
+    background-color: transparent; }
   .dialog__content--shadow {
     box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.1); }
 
@@ -3284,6 +3289,8 @@ table {
   background-color: #d50000;
   color: #fff;
   font-weight: bold; }
+  .dialog--error .dialog__header .dialog-header__action-btn {
+    color: #fff; }
 
 .dialog-header__title {
   padding: 0 1.71429em; }
