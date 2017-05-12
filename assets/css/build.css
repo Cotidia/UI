@@ -2669,12 +2669,243 @@ table {
 .pull-left {
   float: left; }
 
-/** ---- FORM ----
- * CSS styles used to format standard forms.
+/**
+ * Btn - Standard button mixin.
+ */
+/**
+ * Btn - Standard button component style.
+ */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  outline: none;
+  vertical-align: middle;
+  background-color: #666;
+  border: 1px solid #666;
+  color: #fff;
+  padding: 0.85714em 1.14286em;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1em;
+  border-radius: 4px;
+  user-select: none; }
+  .btn:hover {
+    background-color: #6e6e6e;
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+  .btn:active, .btn:focus {
+    background-color: #5e5e5e;
+    color: #fff; }
+  .btn[disabled] {
+    opacity: 0.5;
+    cursor: auto; }
+  .btn--primary {
+    background-color: #00abd3;
+    border-color: #00abd3; }
+    .btn--primary:hover {
+      background-color: #00b7e2;
+      border-color: #00b7e2; }
+    .btn--primary:active, .btn--primary:focus {
+      background-color: #009fc4;
+      border-color: #009fc4; }
+    .btn--primary[disabled]:hover {
+      background-color: #00abd3;
+      border-color: #00abd3; }
+    .btn--primary.btn--transparent {
+      border-color: #00abd3;
+      color: #00abd3; }
+      .btn--primary.btn--transparent:active, .btn--primary.btn--transparent:focus {
+        color: #00abd3; }
+      .btn--primary.btn--transparent:hover {
+        border-color: #00b7e2;
+        color: #00b7e2; }
+  .btn--create {
+    background-color: #00b100;
+    border-color: #00b100; }
+    .btn--create:hover {
+      background-color: #00c000;
+      border-color: #00c000; }
+    .btn--create:active, .btn--create:focus {
+      background-color: #00a200;
+      border-color: #00a200; }
+    .btn--create[disabled]:hover {
+      background-color: #00b100;
+      border-color: #00b100; }
+    .btn--create.btn--transparent {
+      border-color: #00b100;
+      color: #00b100; }
+      .btn--create.btn--transparent:active, .btn--create.btn--transparent:focus {
+        color: #00b100; }
+      .btn--create.btn--transparent:hover {
+        border-color: #00c000;
+        color: #00c000; }
+  .btn--change {
+    background-color: #ff8a00;
+    border-color: #ff8a00; }
+    .btn--change:hover {
+      background-color: #ff910f;
+      border-color: #ff910f; }
+    .btn--change:active, .btn--change:focus {
+      background-color: #f08200;
+      border-color: #f08200; }
+    .btn--change[disabled]:hover {
+      background-color: #ff8a00;
+      border-color: #ff8a00; }
+    .btn--change.btn--transparent {
+      border-color: #ff8a00;
+      color: #ff8a00; }
+      .btn--change.btn--transparent:active, .btn--change.btn--transparent:focus {
+        color: #ff8a00; }
+      .btn--change.btn--transparent:hover {
+        border-color: #ff910f;
+        color: #ff910f; }
+  .btn--cancel {
+    background-color: #666666;
+    border-color: #666666; }
+    .btn--cancel:hover {
+      background-color: #6e6e6e;
+      border-color: #6e6e6e; }
+    .btn--cancel:active, .btn--cancel:focus {
+      background-color: #5e5e5e;
+      border-color: #5e5e5e; }
+    .btn--cancel[disabled]:hover {
+      background-color: #666666;
+      border-color: #666666; }
+    .btn--cancel.btn--transparent {
+      border-color: #666666;
+      color: #666666; }
+      .btn--cancel.btn--transparent:active, .btn--cancel.btn--transparent:focus {
+        color: #666666; }
+      .btn--cancel.btn--transparent:hover {
+        border-color: #6e6e6e;
+        color: #6e6e6e; }
+  .btn--delete {
+    background-color: #d50000;
+    border-color: #d50000; }
+    .btn--delete:hover {
+      background-color: #e40000;
+      border-color: #e40000; }
+    .btn--delete:active, .btn--delete:focus {
+      background-color: #c60000;
+      border-color: #c60000; }
+    .btn--delete[disabled]:hover {
+      background-color: #d50000;
+      border-color: #d50000; }
+    .btn--delete.btn--transparent {
+      border-color: #d50000;
+      color: #d50000; }
+      .btn--delete.btn--transparent:active, .btn--delete.btn--transparent:focus {
+        color: #d50000; }
+      .btn--delete.btn--transparent:hover {
+        border-color: #e40000;
+        color: #e40000; }
+  .btn--transparent {
+    background-color: transparent;
+    color: #666666;
+    border: 1px solid #aaaaaa; }
+    .btn--transparent:active, .btn--transparent:focus {
+      background-color: transparent;
+      color: #666666; }
+    .btn--transparent:hover {
+      background-color: transparent;
+      color: #00abd3;
+      border-color: #00abd3; }
+    .btn--transparent[disabled] {
+      cursor: auto;
+      background-color: transparent;
+      color: #666666;
+      border: 1px solid #aaaaaa; }
+      .btn--transparent[disabled]:hover {
+        border-color: #aaaaaa;
+        color: #666666;
+        background-color: transparent; }
+  .btn--full-width {
+    display: block;
+    width: 100%; }
+  .btn--round {
+    border-radius: 50%;
+    width: 2.71429em;
+    height: 2.71429em;
+    padding-left: 0;
+    padding-right: 0; }
+  .btn--round-large {
+    border-radius: 50%;
+    width: 3.4em;
+    height: 3.4em;
+    padding-left: 0;
+    padding-right: 0; }
+  .btn--large {
+    padding: 1.2em 1.14286em; }
+  .btn--small {
+    padding: 0.28571em 0.57143em; }
+    .btn--small.btn--loading:before {
+      height: 12px;
+      width: 12px;
+      margin-top: -6px;
+      margin-left: -6px; }
+  .btn--margin-bottom {
+    margin-bottom: 0.85714em; }
+  .btn--loading .btn__text {
+    opacity: 0; }
+  .btn--loading:before {
+    content: " ";
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.75em;
+    margin-left: -0.75em;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    background: transparent !important;
+    -webkit-animation: rotate 1s 0s linear infinite;
+    -moz-animation: rotate 1s 0s linear infinite;
+    animation: rotate 1s 0s linear infinite; }
+  .btn--tab {
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+    margin-right: 2px;
+    margin-bottom: 1px; }
+    .btn--tab.btn--transparent {
+      padding-bottom: 0.85714em; }
+
+.btn-group .btn {
+  margin-right: 1.14286em; }
+  .btn-group .btn:last-child {
+    margin-right: 0; }
+
+.btn-group .btn--small {
+  margin-right: 0.57143em; }
+
+/*
+ * Util mixins and classes
  *
  */
+/*
+ * Hide the content of the page but still allow screen readers to see it.
+ */
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
 .form__group {
-  position: relative; }
+  position: relative;
+  margin-bottom: 0.85714em; }
   .form__group--error .form__text, .form__group--error .form__select {
     border-color: #d50000; }
     .form__group--error .form__text:focus, .form__group--error .form__text *:focus, .form__group--error .form__select:focus, .form__group--error .form__select *:focus {
@@ -2714,6 +2945,83 @@ table {
     border-right: 5px solid transparent;
     border-top: 5px solid #666666;
     pointer-events: none; }
+  .form__control--radio-btn {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .form__control--radio-btn label {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      outline: none;
+      vertical-align: middle;
+      background-color: #666;
+      border: 1px solid #666;
+      color: #fff;
+      padding: 0.85714em 1.14286em;
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      text-align: center;
+      font-weight: normal;
+      text-decoration: none;
+      line-height: 1em;
+      border-radius: 4px;
+      user-select: none;
+      border-radius: 0;
+      border-right-width: 0; }
+      .form__control--radio-btn label:hover {
+        background-color: #6e6e6e;
+        text-decoration: none;
+        color: #fff;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+      .form__control--radio-btn label:active, .form__control--radio-btn label:focus {
+        background-color: #5e5e5e;
+        color: #fff; }
+      .form__control--radio-btn label[disabled] {
+        opacity: 0.5;
+        cursor: auto; }
+    .form__control--radio-btn label:first-of-type, .form__control--radio-btn input[type="radio"]:not(:checked) + label:first-of-type {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
+    .form__control--radio-btn label:last-of-type, .form__control--radio-btn input[type="radio"]:not(:checked) + label:last-of-type {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-right-width: 1px; }
+    .form__control--radio-btn input[type="radio"] {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    .form__control--radio-btn input[type="radio"]:not(:checked) + label {
+      background-color: transparent;
+      color: #666666;
+      border: 1px solid #aaaaaa;
+      border-right-width: 0; }
+      .form__control--radio-btn input[type="radio"]:not(:checked) + label:active, .form__control--radio-btn input[type="radio"]:not(:checked) + label:focus {
+        background-color: transparent;
+        color: #666666; }
+      .form__control--radio-btn input[type="radio"]:not(:checked) + label:hover {
+        background-color: transparent;
+        color: #00abd3;
+        border-color: #00abd3; }
+      .form__control--radio-btn input[type="radio"]:not(:checked) + label[disabled] {
+        cursor: auto;
+        background-color: transparent;
+        color: #666666;
+        border: 1px solid #aaaaaa; }
+        .form__control--radio-btn input[type="radio"]:not(:checked) + label[disabled]:hover {
+          border-color: #aaaaaa;
+          color: #666666;
+          background-color: transparent; }
 
 .form__label {
   display: block;
