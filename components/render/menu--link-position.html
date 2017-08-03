@@ -1,0 +1,127 @@
+
+
+<menu class="menu">
+    <header class="menu__item menu__item--open  menu-item">
+        <a href="#" class="menu-item__link">Menu</a>
+    </header>
+    <ul class="menu__container">
+        <li class="menu__item menu__item--close  menu-item">
+            <a href="#" class="menu-item__link">Close</a>
+        </li>
+        <li class="menu__item menu-item">
+            <a href="#home" class="menu-item__link menu-item__link--active">Home</a>
+        </li>
+        <li class="menu__item menu-item">
+            <a href="#demos" class="menu-item__link">Item 1</a>
+        </li>
+        <li class="menu__item menu__item--sub-nav menu-item menu-item--right">
+            <a href="#products" class="menu-item__link menu-item__link--drop-arrow">
+              <span class="fa fa-user"></span>
+              Profile
+            </a>
+            <ul class="menu__sub-nav">
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 1</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 2</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">
+                      Dropdown Item 3 Long Title
+                      <span class="badge">100</span>
+                    </a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 4</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 5</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 6</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu__item menu__item--sub-nav menu-item">
+            <a href="#products" class="menu-item__link menu-item__link--drop-arrow">Item 2</a>
+            <ul class="menu__sub-nav">
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 1</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 2</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 3</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 4</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 5</a>
+                </li>
+                <li class="menu__item menu-item">
+                    <a href="#" class="menu-item__link">Dropdown Item 6</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu__item menu-item">
+            <a href="#testimonials" class="menu-item__link">
+              Item 3
+              <span class="badge">45</span>
+            </a>
+        </li>
+
+        <li class="menu__item menu-item menu-item--right">
+            <a href="#contact" class="menu-item__link">Item 4</a>
+        </li>
+    </ul>
+</menu>
+
+<script type="text/javascript">
+(function(){
+  function showMenu(menu) {
+    menu.querySelector('.menu__container').classList.add('menu__container--mobile-active')
+  }
+
+  function hideMenu(menu) {
+    menu.querySelector('.menu__container').classList.remove('menu__container--mobile-active')
+  }
+
+  // For each instance of .menu
+  function initMenu() {
+    var menus = document.querySelectorAll('.menu')
+    console.log(menus)
+    for (i = 0; i < menus.length; i++) {
+      var menu = menus[i]
+      console.log(menu)
+      menuOpenButton = menu.querySelector('.menu__item--open a')
+      menuOpenButton.addEventListener('touchend', showMenu.bind(null, menu))
+      menuOpenButton.addEventListener('click', showMenu.bind(null, menu))
+
+      menuCloseButton = menu.querySelector('.menu__item--close a')
+      menuCloseButton.addEventListener('touchend', hideMenu.bind(null, menu))
+      menuCloseButton.addEventListener('click', hideMenu.bind(null, menu))
+    }
+  }
+
+  function documentReady () {
+    return (document.readyState === 'interactive' || document.readyState === 'complete')
+  }
+
+  function bootstrap () {
+    document.removeEventListener('readystatechange', bootstrap)
+    initMenu()
+  }
+
+  // Initialize our menu if the document is ready, otherwise listen to its
+  // ready state and bootstrap it when ready
+  if (documentReady()) {
+    bootstrap()
+  } else {
+    document.addEventListener('readystatechange', bootstrap)
+  }
+})()
+</script>
+

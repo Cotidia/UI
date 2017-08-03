@@ -1,0 +1,150 @@
+
+
+<div class="header" id="header">
+    <div class="wrapper">
+        <div class="wrapper__inner">
+            <div id="website-menu" class="[ header__menu ] [ menu ]">
+            <a href="/" class="header__logo">Logo placeholder</a>
+		    <div id="show-menu" class="menu__item menu__item--open">
+		        <a href="" class="menu-item__link">Menu</a>
+		    </div>
+		    <div id="menu-container" class="[ menu__container ] [ menu-container ]">
+		        <div class="menu-container__nav">
+		            <div id="hide-menu" class="menu__item menu__item--close">&nbsp;</div>
+		            <div class="[ menu__item menu__item--home ] [ menu-item ]">
+		                <a href="#home" class="[ menu-item__link menu-item__link--active ] [ navigate ]">Home</a>
+		            </div>
+		            <div class="[ menu__item ] [ menu-item menu-item--drop-arrow ]">
+		                <a href="#products" class="[ menu-item__link {% if request.path == product_page.get_absolute_url %}menu-item__link--active {% endif %}] [ navigate ]">Item 1</a>
+		                <div class="menu-sub-nav">
+
+		                    <div class="[ menu__item ] [ menu-item ]">
+		                        <a href="#" class="[ menu-item__link {% if request.path == node.get_absolute_url %}menu-item__link--active {% endif %}] [ navigate-mobile ]">Dropdown Item 1</a>
+		                    </div>
+
+		                </div>
+		            </div>
+		            <div class="[ menu__item ] [ menu-item ]">
+		                <a href="#demos" class="[ menu-item__link ] [ navigate ]">Item 2</a>
+		            </div>
+
+		            <div class="[ menu__item ] [ menu-item ]">
+		                <a href="#testimonials" class="[ menu-item__link ] [ navigate ]">Item 3</a>
+		            </div>
+
+		            <div class="[ menu__item ] [ menu-item ]">
+		                <a href="#contact" class="[ menu-item__link ] [ navigate ]">Item 4</a>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/velocity.min.js"></script>
+
+<script type="text/javascript">
+var handleHideMenu, hideMenu, initMenu, showMenu, touchEndHandler, touchStartHandler;
+
+window.touchesInAction = {};
+
+touchStartHandler = function(event) {
+  var i, len, results, t, touches;
+  touches = event.changedTouches;
+  results = [];
+  for (i = 0, len = touches.length; i < len; i++) {
+    t = touches[i];
+    results.push(window.touchesInAction["$" + t.identifier] = {
+      identifier: t.identifier,
+      pageX: t.pageX,
+      pageY: t.pageY
+    });
+  }
+  return results;
+};
+
+touchEndHandler = function(cb, event) {
+  var i, len, t, theTouchInfo, touches;
+  touches = event.changedTouches;
+  for (i = 0, len = touches.length; i < len; i++) {
+    t = touches[i];
+    theTouchInfo = window.touchesInAction["$" + t.identifier];
+    theTouchInfo.dx = t.pageX - theTouchInfo.pageX;
+    theTouchInfo.dy = t.pageY - theTouchInfo.pageY;
+  }
+  if (theTouchInfo.dx === 0 && theTouchInfo.dy === 0) {
+    return cb(event);
+  }
+};
+
+window.menuOpen = false;
+
+showMenu = function(e) {
+  var menu;
+  if (window.menuOpen) {
+    return;
+  }
+  e.preventDefault();
+  menu = document.getElementById('website-menu');
+  return Velocity(document.getElementById('menu-container'), {
+    left: 0,
+    opacity: 1
+  }, {
+    display: 'block',
+    duration: 250,
+    complete: function() {
+      menu.className = "[ header__menu ] [ menu menu--open ]";
+      document.body.className = "no-scroll";
+      return window.menuOpen = true;
+    }
+  });
+};
+
+handleHideMenu = function(e) {
+  if (!window.menuOpen) {
+    return;
+  }
+  e.preventDefault();
+  if (e.target.tagName !== 'A') {
+    if (e.target.id === 'home-menu-btn') {
+      window.location = '/';
+      return;
+    }
+    return hideMenu();
+  } else {
+    return setTimeout(function() {
+      return window.location = e.target.href;
+    }, 100);
+  }
+};
+
+hideMenu = function() {
+  var menu;
+  menu = document.getElementById('website-menu');
+  return Velocity(document.getElementById('menu-container'), {
+    left: '100%',
+    opacity: 0
+  }, {
+    display: 'none',
+    duration: 250,
+    complete: function() {
+      menu.className = "[ header__menu ] [ menu ]";
+      document.body.className = "";
+      return window.menuOpen = false;
+    }
+  });
+};
+
+initMenu = function() {
+  var hideMenuBtn, showMenuBtn;
+  showMenuBtn = document.getElementById('show-menu');
+  showMenuBtn.addEventListener('touchstart', showMenu);
+  showMenuBtn.addEventListener('click', showMenu);
+  hideMenuBtn = document.getElementById('menu-container');
+  hideMenuBtn.addEventListener('click', handleHideMenu);
+  hideMenuBtn.addEventListener('touchstart', touchStartHandler);
+  return hideMenuBtn.addEventListener('touchend', touchEndHandler.bind(this, handleHideMenu));
+};
+
+initMenu();
+</script>
