@@ -3210,11 +3210,11 @@ table {
   .hidden-mobile {
     display: none !important; } }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .hidden-tablet {
     display: none !important; } }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
   .hidden-laptop {
     display: none !important; } }
 
@@ -3225,49 +3225,13 @@ table {
 /*
  * Hide for screen readers bu pushing the content away from the viewport.
  */
-.hidden-sr {
+.sr-only {
   position: absolute !important;
   left: -10000px !important;
   top: auto !important;
   width: 1px !important;
   height: 1px !important;
   overflow: hidden !important; }
-
-@media screen and (max-width: 767px) {
-  .hidden-sr-mobile {
-    position: absolute !important;
-    left: -10000px !important;
-    top: auto !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important; } }
-
-@media screen and (min-width: 768px) {
-  .hidden-sr-tablet {
-    position: absolute !important;
-    left: -10000px !important;
-    top: auto !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important; } }
-
-@media screen and (min-width: 1024px) {
-  .hidden-sr-laptop {
-    position: absolute !important;
-    left: -10000px !important;
-    top: auto !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important; } }
-
-@media screen and (min-width: 1280px) {
-  .hidden-sr-desktop {
-    position: absolute !important;
-    left: -10000px !important;
-    top: auto !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important; } }
 
 .form__group {
   position: relative;
@@ -3747,125 +3711,116 @@ table {
 .btn-group .btn--small {
   margin-right: 0.5rem; }
 
-.dialog--small .dialog__content, .dialog--small .dialog__content--pre, .dialog--small .dialog__content--post {
-  max-width: 360px; }
-
-.dialog--large .dialog__content, .dialog--large .dialog__content--pre, .dialog--large .dialog__content--post {
-  max-width: 1280px; }
-
-.dialog--full-width .dialog__content, .dialog--full-width .dialog__content--pre, .dialog--full-width .dialog__content--post {
-  max-width: none; }
-
-.dialog--modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 101; }
-  .dialog--modal-open {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; }
-    @media screen and (min-width: 768px) {
-      .dialog--modal-open {
-        overflow-y: auto; } }
-    .dialog--modal-open:after {
-      content: "";
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.35);
-      z-index: -1; }
-  .dialog--modal .dialog__content {
-    border-radius: 4px;
-    position: relative;
-    border: none;
-    background-color: #fff; }
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .dialog--small .dialog__content, .dialog--small .dialog__content--pre, .dialog--small .dialog__content--post {
+    max-width: 360px; }
+  .dialog--large .dialog__content, .dialog--large .dialog__content--pre, .dialog--large .dialog__content--post {
+    max-width: 1280px; }
+  .dialog--full-width .dialog__content, .dialog--full-width .dialog__content--pre, .dialog--full-width .dialog__content--post {
+    max-width: none; }
+  .dialog--modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101; }
+    .dialog--modal-open {
+      display: flex; }
+      @media screen and (min-width: 768px) {
+        .dialog--modal-open {
+          overflow-y: auto; } }
+      .dialog--modal-open:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+        z-index: -1; }
+    .dialog--modal .dialog__content {
+      border-radius: 4px;
+      position: relative;
+      border: none;
+      background-color: #fff; }
+      @media screen and (max-width: 767px) {
+        .dialog--modal .dialog__content {
+          display: flex;
+          flex-direction: column;
+          max-height: calc(100% - 0.9975rem); } }
     @media screen and (max-width: 767px) {
-      .dialog--modal .dialog__content {
-        display: flex;
-        flex-direction: column;
-        max-height: calc(100% - 0.9975rem); } }
-  @media screen and (max-width: 767px) {
-    .dialog--modal .dialog__body {
-      overflow-y: auto; } }
-  .dialog--modal .dialog__header {
+      .dialog--modal .dialog__body {
+        overflow-y: auto; } }
+    .dialog--modal .dialog__header {
+      background-color: #fafafa;
+      border-bottom: none;
+      color: #333333;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    .dialog--modal .dialog__footer {
+      background-color: #fff;
+      border-top: none;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px; }
+  .dialog__content {
+    background-color: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    width: calc(100% - 1rem);
+    max-width: 540px; }
+    .dialog__content:first-child {
+      margin-top: 0.5025rem; }
+    .dialog__content:last-child {
+      margin-bottom: 0.5025rem; }
+    @media screen and (min-width: 768px) {
+      .dialog__content:first-child {
+        margin-top: 3rem; }
+      .dialog__content:last-child {
+        margin-bottom: 3rem; } }
+    .dialog__content--pre {
+      border: none;
+      background-color: transparent; }
+      @media screen and (max-width: 767px) {
+        .dialog__content--pre {
+          border-bottom: 1px solid #eeeeee;
+          padding: 0 1rem; } }
+    .dialog__content--post {
+      border: none;
+      background-color: transparent; }
+  .dialog__header {
     background-color: #fafafa;
-    border-bottom: none;
-    color: #333333;
+    border-bottom: 1px solid #eeeeee;
     border-top-left-radius: 4px;
-    border-top-right-radius: 4px; }
-  .dialog--modal .dialog__footer {
+    border-top-right-radius: 4px;
+    color: #333333;
+    position: relative; }
+  .dialog__body--padded {
+    padding: 0.75rem 1rem; }
+    @media screen and (min-width: 768px) {
+      .dialog__body--padded {
+        padding: 0.75rem 2rem; } }
+  .dialog__body--center {
+    text-align: center; }
+  .dialog__footer {
     background-color: #fff;
     border-top: none;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px; }
-
-.dialog__content {
-  border-bottom: 1px solid #eeeeee;
-  background-color: #fff;
-  width: calc(100% - 1rem);
-  max-width: 540px;
-  margin: 0.5025rem 0; }
-  @media screen and (min-width: 768px) {
-    .dialog__content {
-      border: 1px solid #eeeeee;
-      border-radius: 4px;
-      margin: 3rem 0; } }
-  .dialog__content--pre {
-    border: none;
-    background-color: transparent; }
-    @media screen and (max-width: 767px) {
-      .dialog__content--pre {
-        border-bottom: 1px solid #eeeeee;
-        padding: 0 1rem; } }
-  .dialog__content--post {
-    border: none;
-    background-color: transparent; }
-  .dialog__content--shadow {
-    box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.1); }
-
-.dialog__header {
-  background-color: #fafafa;
-  border-bottom: 1px solid #eeeeee;
-  color: #333333;
-  position: relative; }
-  @media screen and (min-width: 768px) {
-    .dialog__header {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px; } }
-
-.dialog__body--padded {
-  padding: 0.75rem 1rem; }
-  @media screen and (min-width: 768px) {
-    .dialog__body--padded {
-      padding: 0.75rem 2rem; } }
-
-.dialog__body--center {
-  text-align: center; }
-
-.dialog__footer {
-  background-color: #fff;
-  border-top: none; }
-  @media screen and (min-width: 768px) {
-    .dialog__footer {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px; } }
-
-.dialog--error .dialog__content {
-  border: none; }
-
-.dialog--error .dialog__header {
-  background-color: #d50000;
-  color: #fff;
-  font-weight: bold; }
-  .dialog--error .dialog__header .dialog-header__action-btn {
-    color: #fff; }
+  .dialog--error .dialog__content {
+    border: none; }
+  .dialog--error .dialog__header {
+    background-color: #d50000;
+    color: #fff;
+    font-weight: bold; }
+    .dialog--error .dialog__header .dialog-header__action-btn {
+      color: #fff; }
 
 .dialog-header__title {
   font-size: 1.25em;
@@ -4408,13 +4363,6 @@ hr {
     margin-left: 0.5em; }
     .tag__clear:hover {
       background-color: rgba(0, 0, 0, 0.5); }
-
-.header__logo {
-  padding: 0.75rem 1rem;
-  float: left; }
-  .header__logo:hover {
-    color: inherit;
-    text-decoration: underline; }
 
 .content-inner {
   padding: 0.75rem 1rem; }
