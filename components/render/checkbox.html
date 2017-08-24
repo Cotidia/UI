@@ -2,18 +2,27 @@
 
 <form>
     <div class="form__group">
-        <label class="form__label">Do you have access to the following</label>
-        <div class="form__control form__control--radio">
-            <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="transport" id="car"> A car
-            </label>
-            <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="transport" id="motorbike"> A motorbike
-            </label>
-            <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="transport" id="bicycle"> A bicycle
-            </label>
+        <label class="form__label">Do you have access to the following?</label>
+        <div class="form__control">
+            <ul>
+                <li>
+                    <label for="car">
+                        <input class="form__checkbox" type="checkbox" name="transport" id="car"> A car
+                    </label>
+                </li>
+                <li>
+                    <label for="motorbike">
+                        <input class="form__checkbox" type="checkbox" name="transport" id="motorbike"> A motorbike
+                    </label>
+                </li>
+                <li>
+                    <label for="bicycle">
+                        <input class="form__checkbox" type="checkbox" name="transport" id="bicycle"> A bicycle
+                    </label>
+                </li>
+            </ul>
         </div>
         <div class="form__help">This is required for your insurance policy</div>
     </div>
 </form>
+

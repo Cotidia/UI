@@ -15,20 +15,29 @@
 	<form>
     <div class="form__group">
         <label class="form__label">Would you like to receive any future communication?</label>
-        <div class="form__control form__control--radio">
-            <label class="form__label">
-                <input class="form__checkbox" type="radio" name="marketing" id="yes"> Send me marketing offers
-            </label>
-            <label class="form__label">
-                <input class="form__checkbox" type="radio" name="marketing" id="all"> Send me marketing offers from you and your partners 
-            </label>
-            <label class="form__label">
-                <input class="form__checkbox" type="radio" name="marketing" id="no"> Please never contact me again
-            </label>
+        <div class="form__control">
+            <ul>
+                <li>
+                    <label for="yes">
+                        <input type="radio" name="marketing" id="yes"> Send me marketing offers
+                    </label>
+                </li>
+                <li>
+                     <label for="all">
+                        <input type="radio" name="marketing" id="all"> Send me marketing offers from you and your partners
+                    </label>
+                </li>
+                <li>
+                    <label for="no">
+                        <input type="radio" name="marketing" id="no"> Please never contact me again
+                    </label>
+                </li>
+            </ul>
         </div>
         <div class="form__help">We never pass on your details to third parties</div>
     </div>
 </form>
+
 
 </div>
 
