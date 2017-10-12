@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/build.css">
+    <title>Preview test</title>
+</head>
+<body>
+
+<div class="form scaling-form">
+    <div class="form__group">
+        <label>Base font size</label>
+        <input type="text" class="form__control" name="base_font_size" value="16" />
+    </div>
+    <div class="form__group">
+        <label>Base line height</label>
+        <input type="text" class="form__control" name="base_line_height" value="1.5" />
+    </div>
+    <div class="form__group">
+        <label>Font size multiplier - mobile</label>
+        <input type="text" class="form__control" name="font_size_multiplier--mobile" value="1" />
+    </div>
+    <div class="form__group">
+        <label>Font size multiplier - tablet</label>
+        <input type="text" class="form__control" name="font_size_multiplier--tablet" value="1" />
+    </div>
+    <div class="form__group">
+        <label>Font size multiplier - desktop</label>
+        <input type="text" class="form__control" name="font_size_multiplier--desktop" value="1" />
+    </div>
+    <div class="form__group">
+        <label>Font size ratio multiplier - mobile</label>
+        <input type="text" class="form__control" name="font_size_ratio_multiplier--mobile" value="1.125" />
+    </div>
+    <div class="form__group">
+        <label>Font size ratio multiplier - tablet</label>
+        <input type="text" class="form__control" name="font_size_ratio_multiplier--tablet" value="1.333" />
+    </div>
+    <div class="form__group">
+        <label>Font size ratio multiplier - desktop</label>
+        <input type="text" class="form__control" name="font_size_ratio_multiplier--desktop" value="1.333" />
+    </div>
+    <div class="form__group">
+        <label>Line height ratio multiplier</label>
+        <input type="text" class="form__control" name="line_height_ratio_multiplier" value="0.94269" />
+    </div>
+
+    <p>Results:</p>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th style="text-align: left; font-weight: bold;">Font Size</th>
+                <th style="text-align: left; font-weight: bold;">Mobile</th>
+                <th style="text-align: left; font-weight: bold;">Tablet</th>
+                <th style="text-align: left; font-weight: bold;">Laptop/Desktop</th>
+                <th style="text-align: left; font-weight: bold;">Line Height</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>html</td>
+                <td data-key="font-size-mobile"></td>
+                <td data-key="font-size-tablet"></td>
+                <td data-key="font-size-desktop"></td>
+                <td data-key="font-line-height"></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>Micro</td>
+                <td data-key="micro-mobile"></td>
+                <td data-key="micro-tablet"></td>
+                <td data-key="micro-desktop"></td>
+                <td data-key="micro-line-height"></td>
+            </tr>
+            <tr>
+                <td>Small</td>
+                <td data-key="small-mobile"></td>
+                <td data-key="small-tablet"></td>
+                <td data-key="small-desktop"></td>
+                <td data-key="small-line-height"></td>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td data-key="normal-mobile"></td>
+                <td data-key="normal-tablet"></td>
+                <td data-key="normal-desktop"></td>
+                <td data-key="normal-line-height"></td>
+            </tr>
+            <tr>
+                <td>Emphasis</td>
+                <td data-key="emphasis-mobile"></td>
+                <td data-key="emphasis-tablet"></td>
+                <td data-key="emphasis-desktop"></td>
+                <td data-key="emphasis-line-height"></td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td data-key="medium-mobile"></td>
+                <td data-key="medium-tablet"></td>
+                <td data-key="medium-desktop"></td>
+                <td data-key="medium-line-height"></td>
+            </tr>
+            <tr>
+                <td>Large</td>
+                <td data-key="large-mobile"></td>
+                <td data-key="large-tablet"></td>
+                <td data-key="large-desktop"></td>
+                <td data-key="large-line-height"></td>
+            </tr>
+            <tr>
+                <td>Hero</td>
+                <td data-key="hero-mobile"></td>
+                <td data-key="hero-tablet"></td>
+                <td data-key="hero-desktop"></td>
+                <td data-key="hero-line-height"></td>
+            </tr>
+            <tr>
+                <td>Jumbo</td>
+                <td data-key="jumbo-mobile"></td>
+                <td data-key="jumbo-tablet"></td>
+                <td data-key="jumbo-desktop"></td>
+                <td data-key="jumbo-line-height"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/assets/js/font-scale.js"></script>
+
+
+</body>
+</html>
+

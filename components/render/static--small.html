@@ -11,14 +11,22 @@
             </div>
         </div>
         <div class="dialog__body dialog__body--padded">
-            <div class="form__group">
-                <div class="form__control form__control--text form__control--required">
-                    <input class="form__text" maxlength="256" name="email" placeholder="Email" type="text">
+            <div class="form__row">
+                <div class="form__group form__group--required">
+                    <label class="form__label">Email</label>
+                    <div class="form__control">
+                        <input type="email" name="first_name" placeholder="">
+                    </div>
+                    <div class="form__help">A valid email is required</div>
                 </div>
             </div>
-            <div class="form__group">
-                <div class="form__control form__control--text form__control--required">
-                    <input class="form__text" maxlength="256" name="password" placeholder="Password" type="password">
+            <div class="form__row">
+                <div class="form__group form__group--required">
+                    <label class="form__label">Password</label>
+                    <div class="form__control form__control--text">
+                        <input type="password" name="password">
+                    </div>
+                    <div class="form__help">At least 6 characters required. One letter and one number.</div>
                 </div>
             </div>
         </div>
