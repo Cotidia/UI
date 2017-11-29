@@ -30,6 +30,11 @@
       this.slidesContainer.appendChild(prevButton)
       this.slidesContainer.appendChild(nextButton)
 
+      // Catch next buttons
+      Array.prototype.forEach.call(this.slideshow.querySelectorAll('.next-button'), (function (btn, index) {
+        btn.addEventListener('click', this.nextSlide.bind(this))
+      }).bind(this))
+
       Array.prototype.forEach.call(this.slides, (function (slide) {
         slide.style.position = 'absolute'
         slide.style.transition = 'transform 1s'
