@@ -3618,14 +3618,10 @@ hr {
       flex-wrap: nowrap; } }
   .dialog-footer--reverse {
     flex-direction: row-reverse; }
+  .dialog-footer--center {
+    justify-content: center; }
   .dialog-footer__actions {
     white-space: nowrap; }
-
-.dialog-footer-action--left {
-  align-self: left; }
-
-.dialog-footer-action--right {
-  align-items: right; }
 
 .dialog-section--padded {
   padding: 0.75rem 1rem; }
@@ -4335,7 +4331,7 @@ hr {
     height: 0;
     width: 0;
     border-color: #333333 transparent transparent;
-    border-width: 9px 4.5px 0; }
+    border-width: 4px 4px 0; }
 
 .form__control--radio-btn {
   display: flex;
@@ -4985,12 +4981,14 @@ hr {
  * Menu
  */
 .menu {
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  background-color: var(--menu_background_color, #fafafa); }
   .menu__container {
     padding: 0; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1023px) {
       .menu__container {
         background-color: #fafafa;
+        background-color: var(--menu_background_color_mobile, #fafafa);
         position: fixed;
         z-index: 10;
         top: 0;
@@ -5003,7 +5001,7 @@ hr {
           float: none; }
         .menu__container .menu__sub-nav {
           position: static; } }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1023px) {
       .menu__container--mobile-right {
         left: 100%; } }
     .menu__container--mobile-active {
@@ -5018,12 +5016,12 @@ hr {
     float: left; }
     .menu__item--open {
       display: inline-block; }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         .menu__item--open {
           display: none; } }
     .menu__item--open-right {
       float: right; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       .menu__item--close {
         display: none; } }
     .menu__item--close-right {
@@ -5036,10 +5034,12 @@ hr {
     position: absolute;
     width: auto;
     background-color: #fafafa;
+    background-color: var(--menu_background_color_mobile, #fafafa);
     z-index: 10; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1024px) {
       .menu__sub-nav {
         background-color: #fafafa;
+        background-color: var(--menu_background_color, #fafafa);
         min-width: 180px; } }
     .menu__sub-nav .menu__item {
       float: none; }
@@ -5048,40 +5048,47 @@ hr {
     display: block;
     clear: both; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .menu-item--right {
     float: right; }
     .menu-item--right .menu__sub-nav {
       right: 0; } }
 
 .menu-item:hover {
-  background-color: #eeeeee; }
-  @media screen and (max-width: 767px) {
+  background-color: #eeeeee;
+  background-color: var(--menu_link_background_color_active, #eeeeee); }
+  @media screen and (max-width: 1023px) {
     .menu-item:hover {
-      background-color: #eeeeee; } }
+      background-color: #eeeeee;
+      background-color: var(--menu_link_background_color_active_mobile, #eeeeee); } }
 
 .menu-item__link {
   position: relative;
   color: #333333;
   background-color: transparent;
+  background-color: var(--menu_link_background_color, transparent);
   padding: 0.75rem 1rem;
   display: block; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     .menu-item__link {
-      background-color: transparent; } }
+      background-color: transparent;
+      background-color: var(--menu_link_background_color_mobile, transparent); } }
   .menu-item__link:hover {
-    background-color: #eeeeee; }
-    @media screen and (max-width: 767px) {
+    background-color: #eeeeee;
+    background-color: var(--menu_link_background_color_hover, #eeeeee); }
+    @media screen and (max-width: 1023px) {
       .menu-item__link:hover {
-        background-color: #eeeeee; } }
+        background-color: #eeeeee;
+        background-color: var(--menu_link_background_color_hover_mobile, #eeeeee); } }
   .menu-item__link--active {
-    background-color: #eeeeee; }
+    background-color: #eeeeee;
+    background-color: var(--menu_link_background_color_active, #eeeeee); }
   .menu-item__link--drop-arrow:after {
     border-style: solid;
     height: 0;
     width: 0;
     border-color: #333333 transparent transparent;
-    border-width: 8px 4px 0;
+    border-width: 4px 4px 0;
     content: "";
     display: inline-block;
     top: -0.1875rem;
@@ -5222,7 +5229,7 @@ hr {
     height: 0;
     width: 0;
     border-color: rgba(0, 0, 0, 0.75) transparent transparent;
-    border-width: 10px 5px 0; }
+    border-width: 5px 5px 0; }
   .tooltip--top-left:hover:before, .tooltip--top-left:hover:after {
     transform: translateY(-6px); }
   .tooltip--bottom-left:before {
@@ -5236,7 +5243,7 @@ hr {
     height: 0;
     width: 0;
     border-color: transparent transparent rgba(0, 0, 0, 0.75);
-    border-width: 0 5px 10px; }
+    border-width: 0 5px 5px; }
   .tooltip--bottom-left:hover:before, .tooltip--bottom-left:hover:after {
     transform: translateY(6px); }
   .tooltip--top-right:before {
@@ -5250,7 +5257,7 @@ hr {
     height: 0;
     width: 0;
     border-color: rgba(0, 0, 0, 0.75) transparent transparent;
-    border-width: 10px 5px 0; }
+    border-width: 5px 5px 0; }
   .tooltip--top-right:hover:before, .tooltip--top-right:hover:after {
     transform: translateY(-6px); }
   .tooltip--bottom-right:before {
@@ -5264,7 +5271,7 @@ hr {
     height: 0;
     width: 0;
     border-color: transparent transparent rgba(0, 0, 0, 0.75);
-    border-width: 0 5px 10px; }
+    border-width: 0 5px 5px; }
   .tooltip--bottom-right:hover:before, .tooltip--bottom-right:hover:after {
     transform: translateY(6px); }
   .tooltip--top-center:before {
@@ -5280,7 +5287,7 @@ hr {
     height: 0;
     width: 0;
     border-color: rgba(0, 0, 0, 0.75) transparent transparent;
-    border-width: 10px 5px 0; }
+    border-width: 5px 5px 0; }
   .tooltip--top-center:hover:before, .tooltip--top-center:hover:after {
     transform: translate3d(-50%, -6px, 0); }
   .tooltip--bottom-center:before {
@@ -5296,7 +5303,7 @@ hr {
     height: 0;
     width: 0;
     border-color: transparent transparent rgba(0, 0, 0, 0.75);
-    border-width: 0 5px 10px; }
+    border-width: 0 5px 5px; }
   .tooltip--bottom-center:hover:before, .tooltip--bottom-center:hover:after {
     transform: translate3d(-50%, 6px, 0); }
   .tooltip--small:hover:before {
@@ -5316,7 +5323,7 @@ hr {
  */
 @media screen and (max-width: 767px) {
   .wrapper {
-    margin: 0 1rem; } }
+    margin: 0 2rem; } }
 
 @media screen and (min-width: 768px) {
   .wrapper {
