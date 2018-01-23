@@ -187,21 +187,21 @@
     <span class="hljs-keyword">var</span> close = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.close-dialog'</span>);
     modal.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
         <span class="hljs-keyword">if</span> (e.target.classList.contains(<span class="hljs-string">'dialog'</span>)) {
-            modal.className = <span class="hljs-string">"dialog dialog--modal"</span>;
+            modal.classList.remove(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">""</span>;
         }
     })
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btn.length; i++) {
         btn[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
             e.preventDefault();
-            modal.className = <span class="hljs-string">"dialog dialog--modal dialog--modal-open"</span>;
+            modal.classList.add(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">"no-scroll"</span>;
         })
     }
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; close.length; i++) {
         close[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
             e.preventDefault();
-            modal.className = <span class="hljs-string">"dialog dialog--modal"</span>;
+            modal.classList.remove(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">""</span>;
         })
     }
@@ -246,7 +246,7 @@
     <span class="hljs-keyword">var</span> close = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.close-dialog'</span>);
     modal.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
         <span class="hljs-keyword">if</span>(e.target.classList.contains(<span class="hljs-string">'dialog'</span>)){
-            modal.className = <span class="hljs-string">"dialog dialog--modal"</span>;
+            modal.classList.remove(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">""</span>;
         }
 
@@ -254,14 +254,14 @@
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btn.length; i++) {
         btn[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
             e.preventDefault();
-            modal.className = <span class="hljs-string">"dialog dialog--modal dialog--modal-open"</span>;
+            modal.classList.add(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">"no-scroll"</span>;
         })
     }
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; close.length; i++) {
         close[i].addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
             e.preventDefault();
-            modal.className = <span class="hljs-string">"dialog dialog--modal"</span>;
+            modal.classList.remove(<span class="hljs-string">'dialog--modal-open'</span>)
             <span class="hljs-built_in">document</span>.body.className = <span class="hljs-string">""</span>;
         })
     }

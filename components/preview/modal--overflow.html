@@ -71,7 +71,7 @@
     var close = document.querySelectorAll('.close-dialog');
     modal.addEventListener('click', function(e){
         if(e.target.classList.contains('dialog')){
-            modal.className = "dialog dialog--modal";
+            modal.classList.remove('dialog--modal-open')
             document.body.className = "";
         }
 
@@ -79,14 +79,14 @@
     for (var i = 0; i < btn.length; i++) {
         btn[i].addEventListener('click', function(e){
             e.preventDefault();
-            modal.className = "dialog dialog--modal dialog--modal-open";
+            modal.classList.add('dialog--modal-open')
             document.body.className = "no-scroll";
         })
     }
     for (var i = 0; i < close.length; i++) {
         close[i].addEventListener('click', function(e){
             e.preventDefault();
-            modal.className = "dialog dialog--modal";
+            modal.classList.remove('dialog--modal-open')
             document.body.className = "";
         })
     }
