@@ -69,6 +69,11 @@
   }
 
   Slideshow.prototype.setInterval = function () {
+    // Just make sure that any previous interval is definitely cleared before we set a new one.
+    if (this.to) {
+      clearInterval(this.to)
+    }
+
     this.to = setInterval(this.nextSlide.bind(this), this.interval)
   }
 
@@ -89,14 +94,17 @@
     var slideWidth = this.slideWidth
 
     Array.prototype.forEach.call(this.slides, function (slide, index) {
-      // Remove the transitions while we reseat all the slides (including the call to
-      // `setSlidePositions` below)
-      slide.style.transition = 'none'
-
+      // Reposition exactly where the slide should lie in its 'natural' state for the container
+      // size.
       slide.style.left = (slideWidth * index) + 'px'
 
+      // Remove the transitions while we reseat all the slides (in the call to `setSlidePositions`
+      // below) - this is not because of the `left` change above!
+      slide.style.transition = 'none'
+
       // Reintroduce the transition after this function has finished processing (i.e. after the call
-      // to `setSlidePositions` below, because that's the way `setTimeout` works).
+      // to `setSlidePositions` below, because that's the way `setTimeout` works). A little
+      // confusing but it makes sense.
       setTimeout(function () {
         slide.style.transition = 'transform 1s'
       }, 0)
