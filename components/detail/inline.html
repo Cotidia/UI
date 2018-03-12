@@ -154,17 +154,18 @@
     <code class="Code Code--lang-html">
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"padding: 1rem;"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__inline"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__group"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__label"</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"first_name"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">""</span> <span class="hljs-attr">required</span> <span class="hljs-attr">autofocus</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__help"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__group form__group--inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__label"</span>&gt;</span>Date of birth<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"day"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"DD"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"31"</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__group"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn--primary"</span>&gt;</span>Subscribe<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"month"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"MM"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"12"</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"YYYY"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1900"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"3000"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__help"</span>&gt;</span>Help text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
         
@@ -175,11 +176,18 @@
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-22bce506acb1156e0c888bffe87191e6-panel-view">
     <code class="Code Code--lang-handlebars">
         <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"padding: 1rem;"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__inline"</span>&gt;</span>
-        </span><span class="hljs-template-variable">{{&gt; <a href="text.html">@text</a> form_group_class="" type="email" label="Email" input_attributes=" required autofocus"}}</span><span class="xml">
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__group"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn--primary"</span>&gt;</span>Subscribe<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__group form__group--inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__label"</span>&gt;</span>Date of birth<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"day"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"DD"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"31"</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"month"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"MM"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"12"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__control"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"YYYY"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1900"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"3000"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form__help"</span>&gt;</span>Help text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
     </code>
@@ -235,15 +243,6 @@
             <strong class="Meta-key">Filesystem Path:</strong>
             <span class="Meta-value">components/blocks/form/inline/inline.hbs</span>
         </li>
-        
-        <li class="Meta-item">
-            <strong class="Meta-key">References <em class="Meta-count">(1)</em>:</strong>
-            <span class="Meta-value Meta-value--linkList">
-            
-                <a href="text.html">@<span>text</span></a>
-            
-            </span>
-        </li class="Meta-item">
         
         
     </ul>

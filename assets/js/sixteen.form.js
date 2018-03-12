@@ -2,6 +2,9 @@
 
 (function () {
   function FieldBehaviour (elm) {
+
+    if (elm.parentNode.parentNode.classList.contains("form__group--inline")) return
+
     if (! elm.value) elm.parentNode.parentNode.classList.add("form__group--inactive")
     elm.addEventListener('focus', function() {
         elm.parentNode.parentNode.classList.add("form__group--active")

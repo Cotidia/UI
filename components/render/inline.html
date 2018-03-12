@@ -1,17 +1,18 @@
 
 
 <div style="padding: 1rem;">
-    <div class="form__inline">
-        <div class="form__group">
-            <label class="form__label">Email</label>
-            <div class="form__control">
-                <input type="email" name="first_name" placeholder="" required autofocus>
-            </div>
-            <div class="form__help"></div>
+    <div class="form__group form__group--inline">
+        <label class="form__label">Date of birth</label>
+        <div class="form__control">
+            <input type="number" name="day" placeholder="DD" min="1" max="31">
         </div>
-        <div class="form__group">
-            <button class="btn btn--primary">Subscribe</button>
+        <div class="form__control">
+            <input type="number" name="month" placeholder="MM" min="1" max="12">
         </div>
+        <div class="form__control">
+            <input type="number" name="year" placeholder="YYYY" min="1900" max="3000">
+        </div>
+        <div class="form__help">Help text</div>
     </div>
 </div>
 
