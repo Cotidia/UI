@@ -5,18 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../assets/css/build.css">
     <title>Preview test</title>
 </head>
-<body>
-
-<div style="padding: .75rem;">
-
+<body style="padding: 1rem;">
     <form>
-    <div class="form__group form__group--error">
+    <div class="form__group form__group--required form__group--error">
         <label class="form__label">Would you like to receive any future communication?</label>
-        <div class="form__control">
+        <div class="form__control form__control--borderless">
             <ul>
                 <li>
                     <input type="radio" name="marketing" id="yes">
@@ -38,25 +34,11 @@
                 </li>
             </ul>
         </div>
-        <div class="form__help">Please select an option</div>
+        <div class="form__help">We never pass on your details to third parties</div>
     </div>
 </form>
 
-
-</div>
-
-<script>
-    var elms = document.querySelectorAll('input');
-    elms.forEach(function(elm) {
-        elm.addEventListener('focus', function() {
-            elm.parentNode.parentNode.classList.add("form__group--active")
-        })
-        elm.addEventListener('blur', function() {
-            elm.parentNode.parentNode.classList.remove("form__group--active")
-        })
-    })
-</script>
-
+    <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
 

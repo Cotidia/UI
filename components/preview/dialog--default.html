@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../assets/css/build.css">
+    <title>Preview test</title>
+</head>
+<body>
+    <div class="dialog">
+    <div class="dialog__content">
+        <div class="dialog__header dialog-header dialog-section--padded">
+            <div class="dialog-header__title">
+                Dialog form
+            </div>
+        </div>
+        <div class="dialog__body dialog-section--padded">
+            <form action="" class="form">
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label">First name</label>
+                        <div class="form__control">
+                            <input type="text" name="first_name" placeholder="" required autofocus>
+                        </div>
+                        <div class="form__help"></div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Last name</label>
+                        <div class="form__control">
+                            <input type="text" name="first_name" placeholder="">
+                        </div>
+                        <div class="form__help"></div>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__group form__group--required form__group--error">
+                        <label class="form__label">Email</label>
+                        <div class="form__control form__control--text">
+                            <input type="text" name="first_name" placeholder="frank@green.com" required>
+                        </div>
+                        <div class="form__help">Must be valid and unique</div>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__group form__group--required">
+                        <label class="form__label">Expiry</label>
+                        <div class="form__control">
+                            <input type="text" name="first_name" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form__help"></div>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label">How did you hear about us?</label>
+                        <div class="form__control">
+                            <input type="text" name="first_name" placeholder="" required>
+                        </div>
+                        <div class="form__help">50 characters maximum</div>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label">Gender</label>
+                        <div class="form__control form__control--select">
+                            <select class="form__select" required>
+                                <option class="M">Male</option>
+                                <option class="F">Female</option>
+                                <option class="X">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="form__help"></div>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <form>
+                        <div class="form__group">
+                            <label class="form__label">Would you like to be contacted?</label>
+                            <div class="form__control form__control--borderless">
+                                <ul>
+                                    <li>
+                                        <input type="radio" name="marketing" id="yes">
+                                        <label for="yes" class="form__option-label">
+                                            Send me marketing offers
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="marketing" id="all">
+                                        <label for="all" class="form__option-label">
+                                            Send me marketing offers from you and your partners
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="marketing" id="no">
+                                        <label for="no" class="form__option-label">
+                                            Please never contact me again
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="form__help">We never pass on your details to third parties</div>
+                        </div>
+                    </form>
+                </div>
+                <p class="text-small text-grey">* Required</p>
+            </form>
+        </div>
+        <div class="dialog__footer dialog-footer dialog-section--padded">
+            <div class="dialog-footer__actions">
+                <button class="btn btn--primary">CREATE ACCOUNT</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="../../assets/js/sixteen.form.js"></script>
+    <script src="../../assets/js/sixteen.tabs.js"></script>
+</body>
+</html>
+

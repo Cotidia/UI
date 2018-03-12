@@ -3,21 +3,24 @@
 <form>
     <div class="form__group form__group--required">
         <label class="form__label">Would you like to receive any future communication?</label>
-        <div class="form__control">
+        <div class="form__control form__control--borderless">
             <ul>
                 <li>
-                    <label for="yes">
-                        <input type="radio" name="marketing" id="yes"> Send me marketing offers
+                    <input type="radio" name="marketing" id="yes">
+                    <label for="yes" class="form__option-label">
+                        Send me marketing offers
                     </label>
                 </li>
                 <li>
-                     <label for="all">
-                        <input type="radio" name="marketing" id="all"> Send me marketing offers from you and your partners
+                    <input type="radio" name="marketing" id="all">
+                    <label for="all" class="form__option-label">
+                        Send me marketing offers from you and your partners
                     </label>
                 </li>
                 <li>
-                    <label for="no">
-                        <input type="radio" name="marketing" id="no"> Please never contact me again
+                    <input type="radio" name="marketing" id="no">
+                    <label for="no" class="form__option-label">
+                        Please never contact me again
                     </label>
                 </li>
             </ul>

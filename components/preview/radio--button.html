@@ -5,18 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../assets/css/build.css">
     <title>Preview test</title>
 </head>
-<body>
-
-<div style="padding: .75rem;">
-
+<body style="padding: 1rem;">
     <form>
     <div class="form__group">
         <label class="form__label">Would you like to receive any future communication?</label>
-        <div class="form__control form__control--radio-btn">
+        <div class="form__control form__control--borderless form__control--radio-btn">
             <input type="radio" name="marketing_1" id="marketing-1-yes">
             <label for="marketing-1-yes">Send me marketing offers</label>
         </div>
@@ -24,7 +20,7 @@
     </div>
     <div class="form__group">
         <label>Would you like to receive any future communication?</label>
-        <div class="form__control form__control--radio-btn">
+        <div class="form__control form__control--borderless form__control--radio-btn">
             <input type="radio" name="marketing_2" id="marketing-2-yes">
             <label for="marketing-2-yes">Send me marketing offers</label>
             <input type="radio" name="marketing_2" id="marketing-2-all">
@@ -34,7 +30,7 @@
     </div>
     <div class="form__group">
         <label>Would you like to receive any future communication?</label>
-        <div class="form__control form__control--radio-btn">
+        <div class="form__control form__control--borderless form__control--radio-btn">
             <input type="radio" name="marketing_3" id="marketing-3-yes">
             <label for="marketing-3-yes">Send me marketing offers</label>
             <input type="radio" name="marketing_3" id="marketing-3-all">
@@ -46,7 +42,7 @@
     </div>
     <div class="form__group">
         <label>Would you like to receive any future communication?</label>
-        <div class="form__control form__control--radio-btn">
+        <div class="form__control form__control--borderless form__control--radio-btn">
             <input type="radio" name="marketing_4" id="marketing-4-yes">
             <label for="marketing-4-yes">Send me marketing offers</label>
             <input type="radio" name="marketing_4" id="marketing-4-all">
@@ -60,21 +56,7 @@
     </div>
 </form>
 
-
-</div>
-
-<script>
-    var elms = document.querySelectorAll('input');
-    elms.forEach(function(elm) {
-        elm.addEventListener('focus', function() {
-            elm.parentNode.parentNode.classList.add("form__group--active")
-        })
-        elm.addEventListener('blur', function() {
-            elm.parentNode.parentNode.classList.remove("form__group--active")
-        })
-    })
-</script>
-
+    <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
 

@@ -5,32 +5,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../assets/css/build.css">
     <title>Preview test</title>
 </head>
-<body>
-
-<div style="padding: .75rem;">
-
+<body style="padding: 1rem;">
     <form>
     <div class="form__group form__group--required">
         <label class="form__label">Do you have access to the following?</label>
-        <div class="form__control">
+        <div class="form__control form__control--borderless">
             <ul>
                 <li>
-                    <label for="car">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="car"> A car
+                    <input class="form__checkbox" type="checkbox" name="transport" id="car">
+                    <label for="car" class="form__option-label">
+                        A car
                     </label>
                 </li>
                 <li>
-                    <label for="motorbike">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="motorbike"> A motorbike
+                    <input class="form__checkbox" type="checkbox" name="transport" id="motorbike">
+                    <label for="motorbike" class="form__option-label">
+                        A motorbike
                     </label>
                 </li>
                 <li>
-                    <label for="bicycle">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="bicycle"> A bicycle
+                    <input class="form__checkbox" type="checkbox" name="transport" id="bicycle">
+                    <label for="bicycle" class="form__option-label">
+                        A bicycle
                     </label>
                 </li>
             </ul>
@@ -39,21 +38,7 @@
     </div>
 </form>
 
-
-</div>
-
-<script>
-    var elms = document.querySelectorAll('input');
-    elms.forEach(function(elm) {
-        elm.addEventListener('focus', function() {
-            elm.parentNode.parentNode.classList.add("form__group--active")
-        })
-        elm.addEventListener('blur', function() {
-            elm.parentNode.parentNode.classList.remove("form__group--active")
-        })
-    })
-</script>
-
+    <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
 

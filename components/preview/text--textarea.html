@@ -5,41 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../assets/css/build.css">
     <title>Preview test</title>
 </head>
-<body>
-
-<div style="padding: .75rem;">
-
-    <form class="form">
-    <div class="form__row">
-        <div class="form__group">
-            <label class="form__label">First name</label>
-            <div class="form__control">
-                <textarea name="description" placeholder="Enter a description"></textarea>
-            </div>
-            <div class="form__help">Some helpful information</div>
-        </div>
+<body style="padding: 1rem;">
+    <div class="form__group">
+    <label class="form__label">First name</label>
+    <div class="form__control">
+        <textarea name="description" placeholder="Enter a description"></textarea>
     </div>
-</form>
-
-
+    <div class="form__help">Some helpful information</div>
 </div>
 
-<script>
-    var elms = document.querySelectorAll('input');
-    elms.forEach(function(elm) {
-        elm.addEventListener('focus', function() {
-            elm.parentNode.parentNode.classList.add("form__group--active")
-        })
-        elm.addEventListener('blur', function() {
-            elm.parentNode.parentNode.classList.remove("form__group--active")
-        })
-    })
-</script>
-
+    <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
 

@@ -3,26 +3,29 @@
 <form>
     <div class="form__group form__group--required form__group--error">
         <label class="form__label">Do you have access to the following?</label>
-        <div class="form__control">
+        <div class="form__control form__control--borderless">
             <ul>
                 <li>
-                    <label for="car">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="car"> A car
+                    <input class="form__checkbox" type="checkbox" name="transport" id="car">
+                    <label for="car" class="form__option-label">
+                        A car
                     </label>
                 </li>
                 <li>
-                    <label for="motorbike">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="motorbike"> A motorbike
+                    <input class="form__checkbox" type="checkbox" name="transport" id="motorbike">
+                    <label for="motorbike" class="form__option-label">
+                        A motorbike
                     </label>
                 </li>
                 <li>
-                    <label for="bicycle">
-                        <input class="form__checkbox" type="checkbox" name="transport" id="bicycle"> A bicycle
+                    <input class="form__checkbox" type="checkbox" name="transport" id="bicycle">
+                    <label for="bicycle" class="form__option-label">
+                        A bicycle
                     </label>
                 </li>
             </ul>
         </div>
-        <div class="form__help">Please check at least one option</div>
+        <div class="form__help">A valid choice is required</div>
     </div>
 </form>
 

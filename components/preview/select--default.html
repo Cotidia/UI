@@ -5,43 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../assets/css/build.css">
     <title>Preview test</title>
 </head>
-<body>
-
-<div style="padding: .75rem;">
-
-    <form>
+<body style="padding: 1rem;">
     <div class="form__group">
-        <label class="form__label">Gender</label>
-        <div class="form__control form__control--select">
-            <select class="form__select">
-                <option class="M">Male</option>
-                <option class="F">Female</option>
-                <option class="X">Prefer not to say</option>
-            </select>
-        </div>
-        <div class="form__help">Some helpful information</div>
+    <label class="form__label">Gender</label>
+    <div class="form__control form__control--select">
+        <select class="form__select">
+            <option class="M">Male</option>
+            <option class="F">Female</option>
+            <option class="X">Prefer not to say</option>
+        </select>
     </div>
-</form>
-
-
+    <div class="form__help">Some helpful information</div>
 </div>
 
-<script>
-    var elms = document.querySelectorAll('input');
-    elms.forEach(function(elm) {
-        elm.addEventListener('focus', function() {
-            elm.parentNode.parentNode.classList.add("form__group--active")
-        })
-        elm.addEventListener('blur', function() {
-            elm.parentNode.parentNode.classList.remove("form__group--active")
-        })
-    })
-</script>
-
+    <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
 
