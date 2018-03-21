@@ -7,8 +7,9 @@
                 Dialog form
             </div>
         </div>
-        <div class="dialog__body dialog-section--padded">
+        <div class="dialog__body">
             <form action="" class="form">
+                <fieldset>
                 <div class="form__row">
                     <div class="form__group">
                         <label class="form__label">First name</label>
@@ -67,9 +68,9 @@
                 </div>
                 <div class="form__row">
                     <form>
-                        <div class="form__group">
+                        <div class="form__group form__group--required">
                             <label class="form__label">Would you like to be contacted?</label>
-                            <div class="form__control form__control--borderless form__control--input">
+                            <div class="form__control form__control--radio ">
                                 <ul>
                                     <li>
                                         <input type="radio" name="marketing" id="yes">
@@ -95,7 +96,10 @@
                         </div>
                     </form>
                 </div>
-                <p class="text-small text-grey">* Required</p>
+                <div class="form__row">
+                    <p class="text-small text-grey">* Required</p>
+                </div>
+                </fieldset>
             </form>
         </div>
         <div class="dialog__footer dialog-footer dialog-section--padded">

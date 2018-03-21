@@ -113,11 +113,13 @@
     this.setSlidePositions()
   }
 
-  Slideshow.prototype.prevSlide = function () {
+  Slideshow.prototype.prevSlide = function (e) {
+    if (e) e.preventDefault()
     this.goToSlide(this.currentSlide - 1)
   }
 
-  Slideshow.prototype.nextSlide = function () {
+  Slideshow.prototype.nextSlide = function (e) {
+    if (e) e.preventDefault()
     this.goToSlide(this.currentSlide + 1)
   }
 

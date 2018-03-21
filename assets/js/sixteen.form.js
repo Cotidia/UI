@@ -3,7 +3,8 @@
 (function () {
   function FieldBehaviour (elm) {
 
-    if (! elm.value) elm.parentNode.parentNode.classList.add("form__group--inactive")
+    FieldSetClass(elm)
+
     elm.addEventListener('focus', function() {
         elm.parentNode.parentNode.classList.add("form__group--active")
         elm.parentNode.parentNode.classList.remove("form__group--inactive")
@@ -16,6 +17,12 @@
         elm.addEventListener('keyup', function() {
             elm.style.height = elm.scrollHeight + "px";
         })
+    }
+  }
+
+  function FieldSetClass (elm) {
+    if (! (elm.value || elm.matches(':-webkit-autofill') || elm.matches(':focus'))) {
+      elm.parentNode.parentNode.classList.add("form__group--inactive")
     }
   }
 
@@ -34,6 +41,12 @@
 
     Array.prototype.forEach.call(elms, function (elm) {
       new FieldBehaviour(elm)
+    })
+
+    document.removeEventListener('formfieldsetclass', function () {
+      Array.prototype.forEach.call(elms, function (elm) {
+        new FieldSetClass(elm)
+      })
     })
   }
 

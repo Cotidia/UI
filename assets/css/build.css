@@ -2344,9 +2344,6 @@
  * Dialog
  */
 /**
- * Modal
- */
-/**
  * Form
  */
 /**
@@ -3559,7 +3556,7 @@ hr {
     .dialog--modal .dialog__content {
       border-radius: 2px;
       position: relative;
-      border: none;
+      border: 1px solid #D0D5D7;
       background-color: #fff; }
       @media screen and (max-width: 767px) {
         .dialog--modal .dialog__content {
@@ -3570,8 +3567,8 @@ hr {
       .dialog--modal .dialog__body {
         overflow-y: auto; } }
     .dialog--modal .dialog__header {
-      background-color: #fff;
-      border-bottom: none;
+      background-color: #E5EBED;
+      border-bottom: 1px solid #D0D5D7;
       color: #111315;
       border-top-left-radius: 2px;
       border-top-right-radius: 2px; }
@@ -3674,7 +3671,7 @@ hr {
   font-size: 1rem !important;
   border: none;
   background-color: transparent;
-  color: #7f878a;
+  color: #00abd3;
   cursor: pointer;
   padding: 0; }
   @media screen and (min-width: 768px) {
@@ -4014,12 +4011,12 @@ hr {
           border-top-color: #fff;
           border-left-color: #fff;
           border-right-color: #fff; }
-  .form__control--checkbox-multiple label {
+  .form__control--checkbox-multiple label, .form__control--radio label {
     color: #7f878a;
     display: inline;
     font-size: 80%;
     line-height: 1.5em; }
-  .form__control--checkbox-multiple input:checked + label {
+  .form__control--checkbox-multiple input:checked + label, .form__control--radio input:checked + label {
     color: #111315; }
   .form__control--inline ul li {
     display: inline-block;
@@ -4117,7 +4114,7 @@ fieldset {
   background-color: #fff;
   border: 1px solid #dddddd;
   margin-bottom: 1rem; }
-  fieldset:only-child {
+  fieldset:last-child {
     margin-bottom: 0; }
   fieldset legend {
     line-height: 1.41404em !important;
@@ -4144,6 +4141,12 @@ fieldset {
     padding: 0 1rem; }
     fieldset > .form__row .form__group {
       margin-bottom: 0.5rem; }
+  .dialog fieldset {
+    border: none;
+    margin-bottom: 0;
+    padding-top: 1rem; }
+    .dialog fieldset .form__row {
+      padding: 0 2rem; }
 
 textarea {
   font-family: "Roboto", Helvetica, sans-serif; }
