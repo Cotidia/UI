@@ -48,6 +48,7 @@
           var indicator = document.createElement('li')
           indicator.classList.add('slideshow__indicator', 'slideshow-indicator')
           indicator.setAttribute('role', 'button')
+          indicator.setAttribute('aria-label', 'Slide ' + (index + 1))
           indicator.addEventListener('click', this.goToSlide.bind(this, index))
           indicators.appendChild(indicator)
         }).bind(this))

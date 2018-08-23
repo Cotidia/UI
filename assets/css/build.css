@@ -2344,9 +2344,6 @@
  * Dialog
  */
 /**
- * Form
- */
-/**
  * Breakpoints
  */
 /**
@@ -2642,6 +2639,10 @@ hr {
 .text-center {
   text-align: center !important; }
 
+.text-justify {
+  text-align: justify !important;
+  text-justify: inter-word !important; }
+
 .text-strong {
   font-weight: 700 !important; }
 
@@ -2890,16 +2891,17 @@ hr {
   cursor: pointer;
   display: inline-block;
   position: relative;
+  box-sizing: border-box;
   outline: none;
   vertical-align: middle;
   background-color: #666;
   border: 2px solid #666;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: calc(0.5rem - 1px) 1rem;
   font-family: "Roboto", Helvetica, sans-serif;
   font-style: normal;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
   border-radius: 2px;
   user-select: none;
@@ -3552,17 +3554,13 @@ hr {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.35);
-        z-index: -1; }
-    .dialog--modal .dialog__content {
-      border-radius: 2px;
-      position: relative;
-      border: 1px solid #D0D5D7;
-      background-color: #fff; }
-      @media screen and (max-width: 767px) {
-        .dialog--modal .dialog__content {
-          display: flex;
-          flex-direction: column;
-          max-height: calc(100% - 1.33rem); } }
+        z-index: -1;
+        pointer-events: none; }
+    @media screen and (max-width: 767px) {
+      .dialog--modal .dialog__content {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100% - 1.33rem); } }
     @media screen and (max-width: 767px) {
       .dialog--modal .dialog__body {
         overflow-y: auto; } }
@@ -3582,7 +3580,8 @@ hr {
     border: 1px solid #D0D5D7;
     border-radius: 2px;
     width: calc(100% - 1rem);
-    max-width: 540px; }
+    max-width: 540px;
+    position: relative; }
     .dialog__content:first-child {
       margin-top: 0.67rem; }
     .dialog__content:last-child {
@@ -3793,11 +3792,11 @@ hr {
       border-width: 2px; }
   .form__group--error .form__label {
     color: #d50000; }
-  .form__group--error .form__control--input, .form__group--error .form__control--select {
+  .form__group--error .form__control--input, .form__group--error .form__control--select, .form__group--error .form__control--textarea {
     border-color: #d50000;
     border-width: 2px;
     padding-bottom: 0px; }
-    .form__group--error .form__control--input:hover, .form__group--error .form__control--select:hover {
+    .form__group--error .form__control--input:hover, .form__group--error .form__control--select:hover, .form__group--error .form__control--textarea:hover {
       border-color: #d50000;
       border-width: 2px; }
   .form__group--error .form__control input::placeholder,
@@ -3826,6 +3825,51 @@ hr {
     .form__group--inline .form__control input[type="time"],
     .form__group--inline .form__control input[type="url"] {
       width: auto; }
+  .form__group--boxed .form__control {
+    background-color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid #D0D5D7;
+    border-radius: 2px;
+    box-sizing: padding-box; }
+    .form__group--boxed .form__control--input input, .form__group--boxed .form__control--input select, .form__group--boxed .form__control--select input, .form__group--boxed .form__control--select select, .form__group--boxed .form__control--textarea input, .form__group--boxed .form__control--textarea select {
+      padding-right: 1rem; }
+    .form__group--boxed .form__control--input::after, .form__group--boxed .form__control--select::after, .form__group--boxed .form__control--textarea::after {
+      top: calc(1.25rem - 2px);
+      right: 1rem; }
+    .form__group--boxed .form__control--input:hover, .form__group--boxed .form__control--select:hover, .form__group--boxed .form__control--textarea:hover {
+      border-width: 1px;
+      padding-bottom: 0.5rem; }
+    .form__group--boxed .form__control--input.control-select--focus, .form__group--boxed .form__control--select.control-select--focus, .form__group--boxed .form__control--textarea.control-select--focus {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0; }
+    .form__group--boxed .form__control .control-select__options {
+      line-height: 1.5;
+      width: calc(100% + 2px);
+      left: -1px;
+      margin-top: -1px; }
+    .form__group--boxed .form__control input[type="text"]::placeholder,
+    .form__group--boxed .form__control textarea::placeholder {
+      color: #aaafb1; }
+  .form__group--boxed.form__group--error .form__control {
+    border: 1px solid #d50000; }
+  .form__group--boxed.form__group--active .form__label {
+    display: none; }
+  .form__group--boxed.form__group--inactive .form__label {
+    display: block; }
+  .form__group--boxed .form__label {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    top: calc(0.5rem + 1px);
+    transform: translateY(0); }
+  .form__group--boxed .control-select__clear-button {
+    top: calc(0.5rem + 2px);
+    right: calc(10px + 0.75rem + 0.5rem); }
+  .form__group .tag {
+    margin-top: 0.5rem; }
 
 .form__control {
   min-height: 1.5em;
@@ -3844,6 +3888,7 @@ hr {
   .form__control select {
     line-height: 1.5em !important;
     font-size: 1rem !important;
+    font-family: "Roboto", Helvetica, sans-serif;
     background-color: transparent;
     border: none;
     color: #111315;
@@ -3890,6 +3935,7 @@ hr {
       color: #aaafb1; }
   .form__control select {
     border-radius: 0;
+    padding-right: 1.5rem;
     -webkit-appearance: none;
     -moz-appearance: none; }
   .form__control ul {
@@ -3897,10 +3943,10 @@ hr {
     padding: 0;
     margin: 0.5rem 0; }
   .form__control--input, .form__control--select, .form__control--textarea {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #D0D5D7;
     display: flex; }
     .form__control--input:hover, .form__control--select:hover, .form__control--textarea:hover {
-      border-color: #7f878a;
+      border-color: #555A5D;
       border-width: 2px;
       padding-bottom: 0px; }
   .form__control--select {
@@ -3909,16 +3955,13 @@ hr {
       content: "";
       position: absolute;
       pointer-events: none;
-      right: 1rem;
-      top: 50%;
-      margin-top: -4px;
+      right: 0.5rem;
+      top: calc(0.75rem - 2px);
       border-style: solid;
       height: 0;
       width: 0;
       border-color: #111315 transparent transparent;
       border-width: 5px 5px 0; }
-    .form__control--select:hover::after {
-      margin-top: -3px; }
   .form__control--select.form__control--select-arrow-suffix::after {
     display: none; }
   .form__control--select.form__control--select-arrow-suffix .input-addon--suffix::after {
@@ -3927,7 +3970,7 @@ hr {
     pointer-events: none;
     left: -1rem;
     top: 50%;
-    margin-top: -4px;
+    margin-top: -1px;
     border-style: solid;
     height: 0;
     width: 0;
@@ -3941,16 +3984,17 @@ hr {
       cursor: pointer;
       display: inline-block;
       position: relative;
+      box-sizing: border-box;
       outline: none;
       vertical-align: middle;
       background-color: #666;
       border: 2px solid #666;
       color: #fff;
-      padding: 0.5rem 1rem;
+      padding: calc(0.5rem - 1px) 1rem;
       font-family: "Roboto", Helvetica, sans-serif;
       font-style: normal;
       text-align: center;
-      font-weight: 700;
+      font-weight: 400;
       text-decoration: none;
       border-radius: 2px;
       user-select: none;
@@ -4046,7 +4090,6 @@ hr {
   color: #111315;
   display: flex;
   transition: border-color 0.3s ease;
-  padding-bottom: 2px;
   white-space: nowrap;
   position: relative; }
   .input-addon--prefix {
@@ -4054,10 +4097,13 @@ hr {
     order: -1; }
   .input-addon--suffix {
     padding-left: 0.5rem; }
+  .input-addon > .fa {
+    position: relative;
+    top: -1px; }
 
 .control-select__options {
   background-color: #fff;
-  border: 1px solid #dddddd;
+  border: 1px solid #D0D5D7;
   border-top: none;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -4073,6 +4119,7 @@ hr {
 .control-select__option {
   padding: 0.5rem 1rem;
   text-align: left;
+  color: #111315;
   cursor: pointer; }
   .control-select__option--focused, .control-select__option:hover, .control-select__option:focus {
     background-color: #E5EBED;
@@ -4092,35 +4139,47 @@ hr {
 .control-select--focus .form__select {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  border-bottom-color: #eaeaea; }
+  border-bottom-color: #dee1e3; }
 
 .control-select__group:first-child .control-select__group-heading {
   border-top: none; }
 
 .control-select__group-heading {
   font-size: 80%;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #D0D5D7;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0.5rem 1rem;
   text-align: left; }
 
-[type=submit], button {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0; }
+.control-select__clear-button {
+  border: none;
+  border-radius: 1em;
+  background-color: #D0D5D7;
+  cursor: pointer;
+  font-size: 1em;
+  opacity: 0.6;
+  position: absolute;
+  top: 1px;
+  right: calc(10px + 0.75rem);
+  height: 1.25em;
+  width: 1.25em;
+  padding: 0 0 2px 0; }
+
+@media screen and (max-width: 767px) {
+  [type=submit], button {
+    -webkit-appearance: none; } }
 
 fieldset {
   border-radius: 2px;
   background-color: #fff;
-  border: 1px solid #dddddd;
+  border: 1px solid #D0D5D7;
   margin-bottom: 1rem; }
-  fieldset:last-child {
-    margin-bottom: 0; }
   fieldset legend {
     line-height: 1.41404em !important;
     font-size: 1.125rem !important;
     background-color: inherit;
-    border: 1px solid #dddddd;
+    border: 1px solid #D0D5D7;
     border-bottom: 0;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
@@ -4161,7 +4220,7 @@ textarea {
     line-height: 1.5em !important;
     font-size: 1rem !important;
     background-color: #E5EBED;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #D0D5D7;
     color: #111315; }
     @media screen and (min-width: 768px) {
       .form--table fieldset legend {
@@ -4177,7 +4236,7 @@ textarea {
     padding: 0.5rem 0 0 0; }
     @media screen and (min-width: 768px) {
       .form--table .form__row .form__group:not(:last-child) {
-        border-right: 1px solid #dddddd; } }
+        border-right: 1px solid #D0D5D7; } }
     .form--table .form__row .form__group--error input[type="date"],
     .form--table .form__row .form__group--error input[type="email"],
     .form--table .form__row .form__group--error input[type="number"],
@@ -4193,7 +4252,7 @@ textarea {
       border-width: 1px; }
     .form--table .form__row .form__group--btn {
       align-items: center;
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid #D0D5D7;
       display: flex;
       padding-left: 1rem;
       padding-top: 0.5rem;
@@ -4257,6 +4316,8 @@ textarea {
         border-color: #00abd3;
         border-width: 1px;
         margin-bottom: 0px; }
+    .form--table .form__row .form__group .form__control--radio ul {
+      padding-left: 1rem; }
     .form--table .form__row .form__group .form__help {
       position: absolute;
       top: 0.6rem;
@@ -4835,8 +4896,7 @@ textarea {
 .table {
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #D0D5D7; }
+  border-spacing: 0; }
   .table td.span-1, .table th.span-1 {
     width: 8.33333%; }
   .table td.span-2, .table th.span-2 {
@@ -4861,12 +4921,12 @@ textarea {
     width: 91.66667%; }
   .table td.span-12, .table th.span-12 {
     width: 100%; }
-  .table--clickable td:hover {
+  .table--clickable > thead > tr > td:hover, .table--clickable > tbody > tr > td:hover, .table--clickable > tfoot > tr > td:hover {
     cursor: pointer; }
   @media screen and (max-width: 767px) {
-    .table--stack-mobile thead {
+    .table--stack-mobile > thead {
       display: none; }
-    .table--stack-mobile tr {
+    .table--stack-mobile > thead > tr, .table--stack-mobile > tbody > tr, .table--stack-mobile > tfoot > tr {
       display: block;
       margin-bottom: 1rem;
       margin-left: 1rem;
@@ -4874,31 +4934,36 @@ textarea {
       border: 1px solid #D0D5D7;
       border-bottom: none;
       border-radius: 2px; }
-      .table--stack-mobile tr th {
+      .table--stack-mobile > thead > tr > th, .table--stack-mobile > tbody > tr > th, .table--stack-mobile > tfoot > tr > th {
         display: none; }
-      .table--stack-mobile tr td {
+      .table--stack-mobile > thead > tr > td, .table--stack-mobile > tbody > tr > td, .table--stack-mobile > tfoot > tr > td {
         display: block;
         text-align: right; }
-        .table--stack-mobile tr td:before {
+        .table--stack-mobile > thead > tr > td:before, .table--stack-mobile > tbody > tr > td:before, .table--stack-mobile > tfoot > tr > td:before {
           display: block;
           float: left;
           font-weight: 700;
           content: attr(data-header); } }
-  .table tr {
+  .table--striped > thead > tr:nth-child(odd) > td, .table--striped > tbody > tr:nth-child(odd) > td, .table--striped > tfoot > tr:nth-child(odd) > td {
+    background-color: #f3f4f7; }
+  .table > thead > tr, .table > tbody > tr, .table > tfoot > tr {
     background-color: #fff; }
-    .table tr:hover, .table tr:active, .table tr:focus {
-      background-color: #fafafa; }
-    @media screen and (min-width: 768px) {
-      .table tr:last-child td {
-        border-bottom: none; } }
-    .table tr th {
-      background-color: #D0D5D7;
-      padding: 0.71429rem 1rem;
-      font-weight: 700;
-      text-align: left; }
-    .table tr td {
-      padding: 0.71429rem 1rem;
-      border-bottom: 1px solid #D0D5D7; }
+    .table > thead > tr:hover > td, .table > thead > tr:active > td, .table > thead > tr:focus > td, .table > tbody > tr:hover > td, .table > tbody > tr:active > td, .table > tbody > tr:focus > td, .table > tfoot > tr:hover > td, .table > tfoot > tr:active > td, .table > tfoot > tr:focus > td {
+      background-color: #e6e8ec; }
+    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th {
+      background-color: #eef0f5;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      text-align: left;
+      transition: background-color 0.2s ease; }
+    .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #D0D5D7;
+      background-color: #ffffff; }
+  .table > thead > th {
+    padding: 1rem 1rem; }
+  .table > tfoot > th {
+    padding: 1rem 1rem; }
 
 /*
  * Tag label with close button

@@ -9,18 +9,21 @@
     <title>Preview test</title>
 </head>
 <body style="padding: 1rem;">
-    <div class="form__group form__group--required form__group--error">
+    <form action="" class="form form--animate">
+        <div class="form__group form__group--required form__group--error">
     <label class="form__label">Gender</label>
     <div class="form__control form__control--select">
         <select class="form__select">
             <option class="M">Male</option>
             <option class="F">Female</option>
             <option class="X">Prefer not to say</option>
+            <option class="X">A very long option to test text overflow</option>
         </select>
     </div>
     <div class="form__help">A valid choice is required</div>
 </div>
 
+    </form>
     <script src="../../assets/js/sixteen.form.js"></script>
 </body>
 </html>
